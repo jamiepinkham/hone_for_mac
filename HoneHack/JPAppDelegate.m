@@ -17,6 +17,9 @@
 #define HONE_BONDING_DOORBELL_UDID			@"C5AF9583-2553-4802-9B5C-4347BB025F39"
 
 #define IMMEDIATE_ALERT_SERVICE				@"1802"
+#define BATTERY_SERVICE						@"180F"
+#define BATTERY_LEVEL_CHARACTERISTIC		@"2A19"
+#define CLIENT_CHARACTERISTIC_CONFIG		@"2902"
 
 typedef NS_ENUM(uint8_t, AlertLevel)
 {
@@ -31,6 +34,7 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 @property (nonatomic, strong) CBPeripheral *connectedPeripheral;
 @property (nonatomic, strong) CBCharacteristic *findCharacteristic;
 @property (nonatomic, strong) CBCharacteristic *resetCharacteristic;
+@property (nonatomic, strong) CBCharacteristic *batteryLevelCharacteristic;
 @property (nonatomic, assign) BOOL finding;
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
@@ -41,6 +45,7 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 
 @property (nonatomic, weak) IBOutlet NSButton *findButton;
 @property (nonatomic, weak) IBOutlet NSButton *resetButon;
+@property (weak) IBOutlet NSLevelIndicator *batteryLevelIndicator;
 
 
 - (IBAction) closeScanSheet:(id)sender;
@@ -162,10 +167,21 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 {
 	if(self.connectedPeripheral != nil && self.resetCharacteristic != nil)
 	{
+		NSAlert *alert = [NSAlert alertWithMessageText:@"Are you sure you wish to reset your Hone?" defaultButton:@"Ok" alternateButton:@"Cancel" otherButton:nil informativeTextWithFormat:@""];
+		[alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:nil contextInfo:nil];
+	}
+}
+
+- (void) alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo
+{
+	
+	if(returnCode == NSAlertDefaultReturn)
+	{
 		uint8_t bytes[1];
 		bytes[0] = 0x01;
 		NSMutableData *data = [NSMutableData dataWithBytes:&bytes length:sizeof(uint8_t)];
 		[self.connectedPeripheral writeValue:data forCharacteristic:self.resetCharacteristic type:CBCharacteristicWriteWithoutResponse];
+
 	}
 }
 
@@ -302,6 +318,11 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 		{
 			[aPeripheral discoverCharacteristics:nil forService:aService];
 		}
+		
+		if([aService.UUID isEqual:[CBUUID UUIDWithString:BATTERY_SERVICE]])
+		{
+			[aPeripheral discoverCharacteristics:nil forService:aService];
+		}
     }
 }
 
@@ -348,6 +369,16 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 			}
 		}
 	}
+	if([service.UUID isEqual:[CBUUID UUIDWithString:BATTERY_SERVICE]])
+	{
+		for(CBCharacteristic *aChar in service.characteristics)
+		{
+			if([aChar.UUID isEqual:[CBUUID UUIDWithString:BATTERY_LEVEL_CHARACTERISTIC]])
+			{
+				[self.connectedPeripheral readValueForCharacteristic:aChar];
+			}
+		}
+	}
 }
 
 - (void) peripheral:(CBPeripheral *)aPeripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
@@ -356,6 +387,14 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:CBUUIDDeviceNameString]])
 	{
 		NSLog(@"name value = %@", [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding]);
+	}
+	if([characteristic.UUID isEqual:[CBUUID UUIDWithString:BATTERY_LEVEL_CHARACTERISTIC]])
+	{
+		uint8_t *bytes = (uint8_t *)[characteristic.value bytes];
+		uint8_t field = bytes[0];
+		field = CFSwapInt16LittleToHost(field);
+		NSLog(@"battery level = %d", field);
+		[self.batteryLevelIndicator setDoubleValue:field];
 	}
 	
 }
