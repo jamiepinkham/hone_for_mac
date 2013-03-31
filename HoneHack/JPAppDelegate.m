@@ -46,6 +46,7 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 @property (nonatomic, weak) IBOutlet NSButton *findButton;
 @property (nonatomic, weak) IBOutlet NSButton *resetButon;
 @property (weak) IBOutlet NSLevelIndicator *batteryLevelIndicator;
+@property (weak) IBOutlet NSLevelIndicator *rssiLevelIndicator;
 
 
 - (IBAction) closeScanSheet:(id)sender;
@@ -262,6 +263,7 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 	[self.connectButton sizeToFit];
     [self.progressIndicator setHidden:YES];
     [self.progressIndicator stopAnimation:self];
+	[aPeripheral readRSSI];
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)aPeripheral error:(NSError *)error
@@ -279,6 +281,8 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 	self.findCharacteristic = nil;
 	[self.findButton setEnabled:NO];
 	[self.resetButon setEnabled:NO];
+	[self.batteryLevelIndicator setDoubleValue:0.0f];
+	[self.rssiLevelIndicator setDoubleValue:0.0f];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)aPeripheral error:(NSError *)error
@@ -295,6 +299,8 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 	self.findCharacteristic = nil;
 	[self.findButton setEnabled:NO];
 	[self.resetButon setEnabled:NO];
+	[self.batteryLevelIndicator setDoubleValue:0.0f];
+	[self.rssiLevelIndicator setDoubleValue:0.0f];
 }
 
 - (void) peripheral:(CBPeripheral *)aPeripheral didDiscoverServices:(NSError *)error
@@ -397,6 +403,15 @@ typedef NS_ENUM(uint8_t, AlertLevel)
 		[self.batteryLevelIndicator setDoubleValue:field];
 	}
 	
+}
+
+- (void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(NSError *)error
+{
+	NSLog(@"new peripheral value = %@", [peripheral RSSI]);
+	
+	double rssiValue = [[peripheral RSSI] doubleValue] * -1;
+	[self.rssiLevelIndicator setDoubleValue:rssiValue];
+	[peripheral performSelector:@selector(readRSSI) withObject:nil afterDelay:0.5];
 }
 
 
