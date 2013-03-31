@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7DCC8E5E1707C5C300D524D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCC8E5D1707C5C300D524D2 /* Cocoa.framework */; };
+		7DCC8E681707C5C300D524D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC8E661707C5C300D524D2 /* InfoPlist.strings */; };
+		7DCC8E6A1707C5C300D524D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCC8E691707C5C300D524D2 /* main.m */; };
+		7DCC8E6E1707C5C300D524D2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC8E6C1707C5C300D524D2 /* Credits.rtf */; };
+		7DCC8E711707C5C300D524D2 /* JPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCC8E701707C5C300D524D2 /* JPAppDelegate.m */; };
+		7DCC8E741707C5C400D524D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC8E721707C5C400D524D2 /* MainMenu.xib */; };
+		7DCC8E7B1707C5DF00D524D2 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCC8E7A1707C5DF00D524D2 /* IOBluetooth.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DCC8E5A1707C5C300D524D2 /* HoneHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoneHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DCC8E5D1707C5C300D524D2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7DCC8E601707C5C300D524D2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7DCC8E611707C5C300D524D2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7DCC8E621707C5C300D524D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7DCC8E651707C5C300D524D2 /* HoneHack-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HoneHack-Info.plist"; sourceTree = "<group>"; };
+		7DCC8E671707C5C300D524D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7DCC8E691707C5C300D524D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7DCC8E6B1707C5C300D524D2 /* HoneHack-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HoneHack-Prefix.pch"; sourceTree = "<group>"; };
+		7DCC8E6D1707C5C300D524D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7DCC8E6F1707C5C300D524D2 /* JPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPAppDelegate.h; sourceTree = "<group>"; };
+		7DCC8E701707C5C300D524D2 /* JPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPAppDelegate.m; sourceTree = "<group>"; };
+		7DCC8E731707C5C400D524D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7DCC8E7A1707C5DF00D524D2 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7DCC8E571707C5C300D524D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCC8E7B1707C5DF00D524D2 /* IOBluetooth.framework in Frameworks */,
+				7DCC8E5E1707C5C300D524D2 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7DCC8E511707C5C300D524D2 = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E631707C5C300D524D2 /* HoneHack */,
+				7DCC8E5C1707C5C300D524D2 /* Frameworks */,
+				7DCC8E5B1707C5C300D524D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7DCC8E5B1707C5C300D524D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E5A1707C5C300D524D2 /* HoneHack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DCC8E5C1707C5C300D524D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E7A1707C5DF00D524D2 /* IOBluetooth.framework */,
+				7DCC8E5D1707C5C300D524D2 /* Cocoa.framework */,
+				7DCC8E5F1707C5C300D524D2 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DCC8E5F1707C5C300D524D2 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E601707C5C300D524D2 /* AppKit.framework */,
+				7DCC8E611707C5C300D524D2 /* CoreData.framework */,
+				7DCC8E621707C5C300D524D2 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7DCC8E631707C5C300D524D2 /* HoneHack */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E6F1707C5C300D524D2 /* JPAppDelegate.h */,
+				7DCC8E701707C5C300D524D2 /* JPAppDelegate.m */,
+				7DCC8E721707C5C400D524D2 /* MainMenu.xib */,
+				7DCC8E641707C5C300D524D2 /* Supporting Files */,
+			);
+			path = HoneHack;
+			sourceTree = "<group>";
+		};
+		7DCC8E641707C5C300D524D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7DCC8E651707C5C300D524D2 /* HoneHack-Info.plist */,
+				7DCC8E661707C5C300D524D2 /* InfoPlist.strings */,
+				7DCC8E691707C5C300D524D2 /* main.m */,
+				7DCC8E6B1707C5C300D524D2 /* HoneHack-Prefix.pch */,
+				7DCC8E6C1707C5C300D524D2 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7DCC8E591707C5C300D524D2 /* HoneHack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DCC8E771707C5C400D524D2 /* Build configuration list for PBXNativeTarget "HoneHack" */;
+			buildPhases = (
+				7DCC8E561707C5C300D524D2 /* Sources */,
+				7DCC8E571707C5C300D524D2 /* Frameworks */,
+				7DCC8E581707C5C300D524D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HoneHack;
+			productName = HoneHack;
+			productReference = 7DCC8E5A1707C5C300D524D2 /* HoneHack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7DCC8E521707C5C300D524D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JP;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Jamie Pinkham";
+			};
+			buildConfigurationList = 7DCC8E551707C5C300D524D2 /* Build configuration list for PBXProject "HoneHack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DCC8E511707C5C300D524D2;
+			productRefGroup = 7DCC8E5B1707C5C300D524D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DCC8E591707C5C300D524D2 /* HoneHack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7DCC8E581707C5C300D524D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCC8E681707C5C300D524D2 /* InfoPlist.strings in Resources */,
+				7DCC8E6E1707C5C300D524D2 /* Credits.rtf in Resources */,
+				7DCC8E741707C5C400D524D2 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7DCC8E561707C5C300D524D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCC8E6A1707C5C300D524D2 /* main.m in Sources */,
+				7DCC8E711707C5C300D524D2 /* JPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7DCC8E661707C5C300D524D2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC8E671707C5C300D524D2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7DCC8E6C1707C5C300D524D2 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC8E6D1707C5C300D524D2 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7DCC8E721707C5C400D524D2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7DCC8E731707C5C400D524D2 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7DCC8E751707C5C400D524D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7DCC8E761707C5C400D524D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7DCC8E781707C5C400D524D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HoneHack/HoneHack-Prefix.pch";
+				INFOPLIST_FILE = "HoneHack/HoneHack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7DCC8E791707C5C400D524D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HoneHack/HoneHack-Prefix.pch";
+				INFOPLIST_FILE = "HoneHack/HoneHack-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DCC8E551707C5C300D524D2 /* Build configuration list for PBXProject "HoneHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCC8E751707C5C400D524D2 /* Debug */,
+				7DCC8E761707C5C400D524D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DCC8E771707C5C400D524D2 /* Build configuration list for PBXNativeTarget "HoneHack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DCC8E781707C5C400D524D2 /* Debug */,
+				7DCC8E791707C5C400D524D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7DCC8E521707C5C300D524D2 /* Project object */;
+}
